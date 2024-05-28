@@ -1,0 +1,38 @@
+---
+import i18next, { t } from "i18next";
+---
+
+<div id="animated-paragraph" class="animated-paragraph"></div>
+
+<script>
+  const content = "{t('about.me')}";
+  const typingSpeed = 20;
+  let index = 0;
+  let displayedText = "";
+
+  function typeWriter() {
+    if (index < content.length) {
+      displayedText += content.charAt(index);
+      const element = document.getElementById("animated-paragraph");
+      if (element) {
+        element.innerText = displayedText;
+      }
+      index++;
+      setTimeout(typeWriter, typingSpeed);
+    }
+  }
+
+  typeWriter();
+</script>
+<style>
+  .animated-paragraph {
+    font-size: 1.2rem;
+    font-family: 'Onest Variable' , sans-serif;
+    color: var(--text-color);
+    transition: color 0.3s ease-in-out;
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: var(--bg-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+</style>
