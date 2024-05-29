@@ -1,5 +1,17 @@
 {
-    "about": {
-        "me": "Hello, I'm Ramón Romero. I am a FullStack cross-platform developer with experience in TypeScript, JavaScript and modern frameworks like Astro. I love creating fast, accessible and visually attractive applications."
-    }
+    "landing": {
+        "hello": "Hello, I'm Ramón Romero. I am a FullStack cross-platform developer with experience in TypeScript, JavaScript and modern frameworks like Astro. I love creating fast, accessible and visually attractive applications.",
+        "welcome": "Welcome!"
+    },
+        "nav": {
+            "experience": "Experience",
+            "projects": "Projects",
+            "about": "About me",
+            "contact": "Contact"
+        },
+        "languages": {
+            "en": "English",
+            "es": "Spanish",
+            "de": "German"
+        }
 }

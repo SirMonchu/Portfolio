@@ -12,7 +12,7 @@ interface Props {
   description: string
 }
 
-const { description, title } = Astro.props
+const { description, title } = Astro.props;
 ---
 
 <!doctype html>
@@ -27,33 +27,60 @@ const { description, title } = Astro.props
     <ViewTransitions />
   </head>
   <body class="relative text-black dark:text-white">
-    <div
-    class="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-gray-50 dark:bg-gray-950
-    bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(217,216,255,0.5),rgba(255,255,255,0.9))]
-    dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
-  >
-  </div>
+    <div class="background"></div>
     <slot />
     <Header />
   </body>
 </html>
 
 <style is:global>
-
+* {
+    box-sizing: border-box;
+}
 :root {
+    --size: 25px;
     color-scheme: light dark;
 }
 
 html {
-  font-family: 'Onest Variable' ,system-ui, sans-serif;
+  font-family: 'Onest Variable', system-ui, sans-serif;
 }
 
 body {
-    background-color: #050505;
+    margin: 0;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     min-height: 100vh;
+    overflow: hidden;
 }
 
+.background {
+    position: absolute;
+    top: -75%;
+    left: -75%;
+    width: 250%;
+    height: 250%;
+    background: conic-gradient(
+        from 0deg at 50% 50%,
+        #2B2E4A 0deg,
+        #E84545 72deg,
+        #903749 144deg,
+        #53354A 216deg,
+        #2B2E4A 288deg,
+        #2B2E4A 360deg
+    );
+    filter: blur(8px);
+  -webkit-filter: blur(8px);
+    animation: rotateBackground 60s linear infinite;
+    z-index: -1;
+}
+
+@keyframes rotateBackground {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
 </style>

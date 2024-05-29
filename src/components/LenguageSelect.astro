@@ -1,6 +1,11 @@
 
 ---
 import { LanguageSelector } from "astro-i18next/components";
+import { t } from "i18next";
 ---
 
-<LanguageSelector showFlag={true} class="my-select-class" />
+<LanguageSelector
+  showFlag={false}
+  languageMapping={{ en: t('languages.en'), es: t('languages.es'), de: t('languages.de') }}
+  class="my-select-class bg-transparent hover:scale-125 transition"
+/>
