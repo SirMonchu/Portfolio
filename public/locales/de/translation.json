@@ -1,4 +1,9 @@
 {
+    "astro": {
+        "title": "Portfolio Ramón Romero - FullStack-Entwickler",
+        "desciption": "Verlassen Sie sich bei Ihrem nächsten Projekt auf mich"
+    },
+
     "landing": {
         "hello": "Hallo, ich bin Ramón Romero. Ich bin ein plattformübergreifender FullStack-Entwickler mit Erfahrung in TypeScript, JavaScript und modernen Frameworks wie Astro. Ich liebe es, schnelle, zugängliche und optisch ansprechende Anwendungen zu erstellen.",
         "welcome": "Willkommen!"
@@ -13,5 +18,21 @@
         "en": "English",
         "es": "Spanish",
         "de": "German"
+    },
+
+    "timeline": {
+        "title": "Arbeitserfahrung",
+
+        "nowadays": {
+            "date": "Derzeit…",
+            "title": "Für Sie verfügbar",
+            "desciption": "Ich bin bereit, mich neuen Herausforderungen zu stellen und zum Erfolg Ihres nächsten Projekts beizutragen. Mit umfassender Erfahrung in der Softwareentwicklung bin ich bereit, innovative und effektive Lösungen anzubieten. Kontaktieren Sie mich und lassen Sie uns Ihre Vision Wirklichkeit werden lassen!"
+        },
+
+        "past": {
+            "date": "Juni 2024",
+            "title": "FullStack-Entwickler",
+            "desciption": "Verantwortlich für die Entwicklung von WordPress-Websites und -Anwendungen mit Angular, Spring Boot und Tailwind. Ich habe komplette Lösungen vom Frontend bis zum Backend implementiert und so Qualität und Effizienz in jedem Projekt sichergestellt."
+            }
     }
 }

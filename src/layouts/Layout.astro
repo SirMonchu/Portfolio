@@ -38,49 +38,65 @@ const { description, title } = Astro.props;
     box-sizing: border-box;
 }
 :root {
-    --size: 25px;
-    color-scheme: light dark;
+  --size: 25px;
+  color-scheme: light dark;
 }
 
 html {
   font-family: 'Onest Variable', system-ui, sans-serif;
+  overflow: auto;
 }
 
 body {
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    overflow: hidden;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow: hidden;
 }
 
 .background {
-    position: absolute;
-    top: -75%;
-    left: -75%;
-    width: 250%;
-    height: 250%;
-    background: conic-gradient(
-        from 0deg at 50% 50%,
-        #2B2E4A 0deg,
-        #E84545 72deg,
-        #903749 144deg,
-        #53354A 216deg,
-        #2B2E4A 288deg,
-        #2B2E4A 360deg
-    );
-    filter: blur(8px);
+  position: absolute;
+  top: -75%;
+  left: -75%;
+  width: 250%;
+  height: 250%;
+  filter: blur(8px);
   -webkit-filter: blur(8px);
-    animation: rotateBackground 60s linear infinite;
-    z-index: -1;
+  animation: rotateBackground 60s linear infinite;
+  z-index: -1;
+}
+
+.background.light {
+  background: conic-gradient(
+    from 0deg at 50% 50%,
+    #FDF1BF 0deg,
+    #F77F00 72deg,
+    #FDB813 144deg,
+    #F0AC5F 216deg,
+    #FDF1BF 288deg,
+    #FDF1BF 360deg
+  );
+}
+
+.background.dark {
+  background: conic-gradient(
+    from 0deg at 50% 50%,
+    #2B2E4A 0deg,
+    #E84545 72deg,
+    #903749 144deg,
+    #53354A 216deg,
+    #2B2E4A 288deg,
+    #2B2E4A 360deg
+  );
 }
 
 @keyframes rotateBackground {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 </style>

@@ -1,0 +1,31 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+import { t } from "i18next";
+const EXPERIENCIE = [
+  {
+    date: t("timeline.nowadays.date"),
+    title: t("timeline.nowadays.title"),
+    company: "",
+    description:
+      t("timeline.nowadays.desciption"),
+    link: "https://www.linkedin.com/in/ramón-romero-cárdenas-064298139",
+  },
+  {
+    date: t("timeline.past.date"),
+    title: t("timeline.past.title"),
+    company: "Fersoft Informática, S.L.",
+    description:
+      t("timeline.past.desciption"),
+  },
+]
+---
+
+<ol class="relative mt-16">
+  {
+    EXPERIENCIE.map((experiencie) => (
+      <li class="">
+        <ExperienceItem {...experiencie} />
+      </li>
+    ))
+  }
+</ol>

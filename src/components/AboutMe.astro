@@ -2,7 +2,7 @@
 import i18next, { t } from "i18next";
 ---
 
-<div id="animated-paragraph" class="animated-paragraph">{t('landing.hello')}</div>
+<div id="animated-paragraph" class="animated-paragraph"><slot/></div>
 
 <script>
   const element = document.getElementById("animated-paragraph");
