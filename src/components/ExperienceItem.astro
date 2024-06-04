@@ -17,7 +17,7 @@ const { title, company, description, link, date } = Astro.props
 >
   <div class="relative pb-12 md:col-span-2">
     <div class="sticky top-0">
-      <span class="text-yellow-400 -left-[42px] absolute rounded-full text-5xl"
+      <span class="text-yellow-400 -left-[43.5px] absolute rounded-full text-5xl"
         >&bull;</span
       >
 
@@ -26,12 +26,12 @@ const { title, company, description, link, date } = Astro.props
       <time class="p-0 m-0 text-sm text-gray-600/80 dark:text-white/80">{date}</time>
     </div>
   </div>
-  <div class="relative flex flex-col gap-2 pb-4 text-gray-600 dark:text-gray-300 md:col-span-3">
+  <div class="relative flex flex-col gap-2 pb-4 text-gray-600 dark:text-gray-300 md:col-span-3 text-pretty">
     {description}
     {
       link && (
         <LinkInline href={link}>
-          Saber más{" "}
+          Perfil Linkedin{" "}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="w-5 icon icon-tabler icon-tabler-chevron-right"

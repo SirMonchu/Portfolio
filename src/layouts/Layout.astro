@@ -26,7 +26,7 @@ const { description, title } = Astro.props;
     <title>{title}</title>
     <ViewTransitions />
   </head>
-  <body class="relative text-black dark:text-white">
+  <body class="relative text-black dark:text-white scrollbar">
     <div class="background"></div>
     <slot />
     <Header />
@@ -35,16 +35,18 @@ const { description, title } = Astro.props;
 
 <style is:global>
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
+
 :root {
   --size: 25px;
-  color-scheme: light dark;
+color-scheme: light dark;
 }
 
 html {
   font-family: 'Onest Variable', system-ui, sans-serif;
   overflow: auto;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -53,6 +55,22 @@ body {
   flex-direction: column;
   min-height: 100vh;
   overflow: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .scrollbar::-webkit-scrollbar {
+    width: 0;
+  }
 }
 
 .background {
