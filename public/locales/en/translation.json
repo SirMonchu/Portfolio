@@ -34,5 +34,16 @@
                     "title": "FullStack Developer",
                     "desciption": "Responsible for the development of WordPress websites and applications using Angular, Spring Boot and Tailwind. I implemented complete solutions from the frontend to the backend, ensuring quality and efficiency in each project."
                 }
+        },
+
+        "projects": {
+            "pandafit": {
+                "desciption": "Diet and Sports Management Software by creating dynamic forms."
+            },
+
+            "cookieaware": {
+                "desciption": "Software that automates the creation and management of documents for website policies."
+            }
+            
         }
 }

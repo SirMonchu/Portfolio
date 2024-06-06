@@ -1,20 +1,81 @@
 ---
+import GitHub from "../icons/GitHub.astro"
+import Tailwind from "../icons/Tailwind.astro"
+import SpringBoot from "../icons/SpringBoot.astro"
+import Angular from "../icons/Angular.astro"
+import Link from "../icons/Link.astro"
 
 interface Props {
   title: string
   description: string
   link?: string
   imgSrc: string
+  frontSrc?: string
+  backSrc?: string
 }
 
-const { title, description, link, imgSrc } = Astro.props
+const { title, description, link, imgSrc, frontSrc, backSrc } = Astro.props
 ---
 
-<a href={link} class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
-    <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src={imgSrc} alt="">
-    <div class="flex flex-col justify-between p-4 leading-normal">
-        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{title}</h5>
-        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{description}</p>
-    </div>
-</a>
+<a
+  href={link}
+  target="_blank"
+  class="relative group flex flex-col items-stretch bg-white border border-gray-200 rounded-lg shadow-lg hover:shadow-xl transition-all dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 dark:bg-opacity-30 dark:hover:bg-opacity-40"
+>
+  <div class="relative w-full h-64 md:h-auto md:flex-shrink-0 overflow-hidden rounded-t-lg">
+    <Link class="absolute right-0 m-4 opacity-0 group-hover:z-20 z-20 group-hover:opacity-100 group-hover:scale-150 transition-transform duration-200 ease-in-out"/>
+    <img
+      class="object-cover w-full h-full group-hover:scale-110 transition-transform duration-200 ease-in-out group-hover:z-10 z-10"
+      src={imgSrc}
+      alt={title}
+    />
+  </div>
+  <div class="flex flex-col justify-between p-6 leading-normal">
+    <h5 class="mb-3 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white group-hover:text-[#00FFC8] transition-colors duration-200">
+      {title}
+    </h5>
+    <p class="mb-4 font-medium text-gray-700 dark:text-gray-400">
+      {description}
+    </p>
 
+    <div class="flex space-x-2 mb-4">
+      {frontSrc && (
+          <object>
+            <a href={frontSrc} target="_blank" class="inline-flex items-center px-4 py-2 text-sm font-semibold text-white bg-gray-900 rounded-full group-hover:bg-gray-700 transition-colors duration-200 dark:bg-gray-700 dark:group-hover:bg-gray-600">
+              <GitHub class="mr-2 h-6 w-6" />
+              Frontend
+            </a>
+          </object>
+      )}
+      {backSrc && (
+          <object>
+            <a href={backSrc} target="_blank" class="inline-flex items-center px-4 py-2 text-sm font-semibold text-white bg-gray-900 rounded-full group-hover:bg-gray-700 transition-colors duration-200 dark:bg-gray-700 dark:group-hover:bg-gray-600">
+              <GitHub class="mr-2 h-6 w-6" />
+              Backend
+            </a>
+          </object>
+      )}
+    </div>
+
+    <div class="flex space-x-2">
+      <span
+        class="inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-700 bg-gray-200 rounded-full group-hover:bg-gray-300 transition-colors duration-200 dark:text-gray-300 dark:bg-gray-700 dark:group-hover:bg-gray-600"
+      >
+        <SpringBoot class="mr-2 h-6 w-6" />
+        Springboot
+      </span>
+      <span
+        class="inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-700 bg-gray-200 rounded-full group-hover:bg-gray-300 transition-colors duration-200 dark:text-gray-300 dark:bg-gray-700 dark:group-hover:bg-gray-600"
+      >
+        <Angular class="mr-2 h-6 w-6" />
+        Angular
+      </span>
+      <span
+        class="inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-700 bg-gray-200 rounded-full group-hover:bg-gray-300 transition-colors duration-200 dark:text-gray-300 dark:bg-gray-700 dark:group-hover:bg-gray-600"
+      >
+        <Tailwind class="mr-2 h-6 w-6" />
+        Tailwind
+      </span>
+    </div>
+  </div>
+</a>
