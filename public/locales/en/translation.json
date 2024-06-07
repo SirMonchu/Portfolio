@@ -38,11 +38,11 @@
 
         "projects": {
             "pandafit": {
-                "desciption": "Diet and Sports Management Software by creating dynamic forms."
+                "desciption": "PandaFit is a technological tool designed for educational institutions that offer diet and sports programs. It allows students to collect and analyze data on diet and lifestyle habits, generating detailed reports to improve health and track healthy habits."
             },
 
             "cookieaware": {
-                "desciption": "Software that automates the creation and management of documents for website policies."
+                "desciption": "Innovative software designed for Fersoft that automates the creation and management of documents for a web page's policies, improving the speed of creating policy pages by 50% and reducing compliance errors by 60%. Allowing the creation of these policies in an agile and automated way."
             }
             
         }

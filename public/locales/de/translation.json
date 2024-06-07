@@ -38,11 +38,11 @@
 
     "projects": {
         "pandafit": {
-            "desciption": "Software zur Diät- und Sportverwaltung durch die Erstellung dynamischer Formulare."
+            "desciption": "PandaFit ist ein technologisches Tool, das für Bildungseinrichtungen entwickelt wurde, die Diät- und Sportprogramme anbieten. Es ermöglicht Schülern, Daten zu Ernährungs- und Lebensgewohnheiten zu sammeln und zu analysieren und detaillierte Berichte zu erstellen, um die Gesundheit zu verbessern und gesunde Gewohnheiten zu verfolgen."
         },
 
         "cookieaware": {
-            "desciption": "Software, die die Erstellung und Verwaltung von Dokumenten für Website-Richtlinien automatisiert."
+            "desciption": "Für Fersoft entwickelte innovative Software, die die Erstellung und Verwaltung von Dokumenten für die Richtlinien einer Webseite automatisiert, die Geschwindigkeit der Erstellung von Richtlinienseiten um 50 % steigert und Compliance-Fehler um 60 % reduziert. Ermöglicht die agile und automatisierte Erstellung dieser Richtlinien."
         }
     }
 }
