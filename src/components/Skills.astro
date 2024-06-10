@@ -1,0 +1,115 @@
+---
+import SkeletonLoader from './SkeletonLoader.astro';
+
+const technologiesByCategory = {
+  Frontend: [
+    { title: 'HTML', imgSrc: 'https://img.icons8.com/?size=256&id=20909&format=png' },
+    { title: 'CSS', imgSrc: 'https://img.icons8.com/?size=256&id=21278&format=png' },
+    { title: 'JavaScript', imgSrc: 'https://img.icons8.com/?size=256&id=108784&format=png' },
+    { title: 'Angular', imgSrc: 'https://seeklogo.com/images/A/angular-icon-logo-5FC0C40EAC-seeklogo.com.png' },
+    { title: 'Tailwind', imgSrc: 'https://img.icons8.com/?size=256&id=4PiNHtUJVbLs&format=png' },
+    { title: 'TypeScript', imgSrc: 'https://img.icons8.com/?size=256&id=Xf1sHBmY73hA&format=png' },
+    { title: 'SASS', imgSrc: 'https://img.icons8.com/?size=256&id=QBqFNfPPB2Kx&format=png' },
+    { title: 'Bootstrap', imgSrc: 'https://img.icons8.com/?size=256&id=PndQWK6M1Hjo&format=png' },
+    { title: 'Ionic', imgSrc: 'https://img.icons8.com/?size=256&id=nUFOCFvI5eIk&format=png' }
+  ],
+  Backend: [
+    { title: 'Node.js', imgSrc: 'https://img.icons8.com/?size=256&id=54087&format=png' },
+    { title: 'C#', imgSrc: 'https://static-00.iconduck.com/assets.00/c-sharp-c-icon-1822x2048-wuf3ijab.png' },
+    { title: 'C++', imgSrc: 'https://img.icons8.com/?size=256&id=TpULddJc4gTh&format=png' },
+    { title: 'C', imgSrc: 'https://cdn.icon-icons.com/icons2/2415/PNG/512/c_original_logo_icon_146611.png' },
+    { title: 'Java', imgSrc: 'https://img.icons8.com/?size=256&id=13679&format=png' },
+    { title: 'SpringBoot', imgSrc: 'https://img.icons8.com/?size=256&id=90519&format=png' },
+    { title: 'PHP', imgSrc: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/1200px-PHP-logo.svg.png' }
+  ],
+  Databases: [
+    { title: 'Firebase', imgSrc: 'https://img.icons8.com/?size=256&id=62452&format=png' },
+    { title: 'MySQL', imgSrc: 'https://img.icons8.com/?size=256&id=UFXRpPFebwa2&format=png' },
+    { title: 'PostgreSQL', imgSrc: 'https://img.icons8.com/?size=256&id=38561&format=png' },
+    { title: 'MariaDB', imgSrc: 'https://img.icons8.com/?size=256&id=nrY6pkbRkJCi&format=png' },
+    { title: 'PhpMyAdmin', imgSrc: 'https://www.phpmyadmin.net/static/images/logo.png?067b638aa2a2' }
+  ],
+  DevOps: [
+    { title: 'Git', imgSrc: 'https://img.icons8.com/?size=256&id=62856&format=png' },
+    { title: 'Docker', imgSrc: 'https://img.icons8.com/?size=256&id=cdYUlRaag9G9&format=png' },
+    { title: 'AWS', imgSrc: 'https://img.icons8.com/?size=256&id=33039&format=png' },
+    { title: 'Linux', imgSrc: 'https://img.icons8.com/?size=256&id=17842&format=png' }
+  ],
+  MobileDevelopment: [
+    { title: 'Android Studio', imgSrc: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Android_Studio_icon_%282023%29.svg/1024px-Android_Studio_icon_%282023%29.svg.png' }
+  ],
+  GameDevelopment: [
+    { title: 'Unity', imgSrc: 'https://img.icons8.com/?size=256&id=39848&format=png' },
+    { title: 'Unreal', imgSrc: 'https://img.icons8.com/?size=256&id=38240&format=png' },
+    { title: 'Blender', imgSrc: 'https://img.icons8.com/?size=256&id=65231&format=png' }
+  ]
+};
+---
+
+<div class="p-4">
+  <div id="loading-container">
+    {Object.entries(technologiesByCategory).map(([category, technologies]) => (
+      <div id={category}>
+        <h2 class="text-2xl font-bold mt-6 mb-4">{category}</h2>
+        <div class="flex flex-wrap gap-4 justify-center">
+          <SkeletonLoader count={technologies.length} />
+        </div>
+      </div>
+    ))}
+  </div>
+  <div id="technologies-container" class="hidden">
+    {Object.entries(technologiesByCategory).map(([category, technologies]) => (
+      <div id={category}>
+        <h2 class="text-2xl font-bold mt-6 mb-4">{category}</h2>
+        <div class="flex flex-wrap gap-4 justify-center">
+          {technologies.map(tech => (
+            <div id={tech.title} class="flex items-center gap-2 bg-gray-100 bg-opacity-10 rounded-xl shadow-lg p-4">
+              <img data-src={tech.imgSrc} alt={tech.title} class="h-12 w-12 object-cover lazy" loading="lazy" />
+              <h3 class="text-xl font-semibold">{tech.title}</h3>
+            </div>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const lazyImages = document.querySelectorAll<HTMLImageElement>('img.lazy');
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const image = entry.target as HTMLImageElement;
+          const src = image.dataset.src;
+          if (src) {
+            image.src = src;
+            image.removeAttribute('data-src');
+            observer.unobserve(image);
+          }
+        }
+      });
+    });
+
+    lazyImages.forEach(image => {
+      imageObserver.observe(image);
+    });
+
+    // Simular la carga de datos
+    const loadingContainer = document.getElementById('loading-container');
+    const technologiesContainer = document.getElementById('technologies-container');
+
+    if (loadingContainer && technologiesContainer) {
+      setTimeout(() => {
+        loadingContainer.classList.add('hidden');
+        technologiesContainer.classList.remove('hidden');
+      }, 1000);
+    }
+  });
+</script>
+
+<style>
+  .hidden {
+    display: none;
+  }
+</style>
