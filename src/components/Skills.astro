@@ -11,7 +11,8 @@ const technologiesByCategory = {
     { title: 'TypeScript', imgSrc: 'https://img.icons8.com/?size=256&id=Xf1sHBmY73hA&format=png' },
     { title: 'SASS', imgSrc: 'https://img.icons8.com/?size=256&id=QBqFNfPPB2Kx&format=png' },
     { title: 'Bootstrap', imgSrc: 'https://img.icons8.com/?size=256&id=PndQWK6M1Hjo&format=png' },
-    { title: 'Ionic', imgSrc: 'https://img.icons8.com/?size=256&id=nUFOCFvI5eIk&format=png' }
+    { title: 'Ionic', imgSrc: 'https://img.icons8.com/?size=256&id=nUFOCFvI5eIk&format=png' },
+    { title: 'Astro', imgSrc: 'https://img.icons8.com/?size=256&id=kXuRhjMIeKhk&format=png' }
   ],
   Backend: [
     { title: 'Node.js', imgSrc: 'https://img.icons8.com/?size=256&id=54087&format=png' },
@@ -60,7 +61,8 @@ const technologiesByCategory = {
   <div id="technologies-container" class="hidden">
     {Object.entries(technologiesByCategory).map(([category, technologies]) => (
       <div id={category}>
-        <h2 class="text-2xl font-bold mt-6 mb-4">{category}</h2>
+        <h2 class="text-2xl font-bold mt-6 mb-0">{category}</h2>
+        <hr class="h-px mb-8 bg-white border-0 dark:bg-white">
         <div class="flex flex-wrap gap-4 justify-center">
           {technologies.map(tech => (
             <div id={tech.title} class="flex items-center gap-2 bg-gray-100 bg-opacity-10 rounded-xl shadow-lg p-4">

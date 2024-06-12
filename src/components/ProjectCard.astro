@@ -41,37 +41,37 @@ const { title, description, link, imgSrc, frontSrc, backSrc } = Astro.props
     <div class="flex space-x-2 mb-4">
       {frontSrc && (
           <object>
-            <a href={frontSrc} target="_blank" class="inline-flex items-center px-4 py-2 text-sm font-semibold text-white bg-gray-900 rounded-full group-hover:bg-gray-700 transition-colors duration-200 dark:bg-gray-700 dark:group-hover:bg-gray-600">
+            <a href={frontSrc} target="_blank" class="btn-anim inline-flex items-center px-4 py-2 text-sm font-semibold text-white bg-gray-900 rounded-full transition-colors duration-200 dark:bg-gray-700 dark:hover:bg-gray-600">
               <GitHub class="mr-2 h-6 w-6" />
               Frontend
             </a>
           </object>
       )}
       {backSrc && (
-          <object>
-            <a href={backSrc} target="_blank" class="inline-flex items-center px-4 py-2 text-sm font-semibold text-white bg-gray-900 rounded-full group-hover:bg-gray-700 transition-colors duration-200 dark:bg-gray-700 dark:group-hover:bg-gray-600">
-              <GitHub class="mr-2 h-6 w-6" />
-              Backend
-            </a>
-          </object>
+        <object>
+          <a href={backSrc} target="_blank" class="btn-anim inline-flex items-center px-4 py-2 text-sm font-semibold text-white bg-gray-900 rounded-full transition-colors duration-200 dark:bg-gray-700 dark:hover:bg-gray-600">
+            <GitHub class="mr-2 h-6 w-6" />
+            Backend
+          </a>
+        </object>
       )}
     </div>
 
     <div class="flex space-x-2">
       <span
-        class="inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-700 bg-gray-200 rounded-full group-hover:bg-gray-300 transition-colors duration-200 dark:text-gray-300 dark:bg-gray-700 dark:group-hover:bg-gray-600"
+        class="inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-700 bg-gray-200 rounded-full transition-colors duration-200 dark:text-gray-300 dark:bg-gray-700"
       >
         <SpringBoot class="mr-2 h-6 w-6" />
         Springboot
       </span>
       <span
-        class="inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-700 bg-gray-200 rounded-full group-hover:bg-gray-300 transition-colors duration-200 dark:text-gray-300 dark:bg-gray-700 dark:group-hover:bg-gray-600"
+        class="inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-700 bg-gray-200 rounded-full transition-colors duration-200 dark:text-gray-300 dark:bg-gray-700"
       >
         <Angular class="mr-2 h-6 w-6" />
         Angular
       </span>
       <span
-        class="inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-700 bg-gray-200 rounded-full group-hover:bg-gray-300 transition-colors duration-200 dark:text-gray-300 dark:bg-gray-700 dark:group-hover:bg-gray-600"
+        class="inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-700 bg-gray-200 rounded-full transition-colors duration-200 dark:text-gray-300 dark:bg-gray-700"
       >
         <Tailwind class="mr-2 h-6 w-6" />
         Tailwind
@@ -79,3 +79,51 @@ const { title, description, link, imgSrc, frontSrc, backSrc } = Astro.props
     </div>
   </div>
 </a>
+
+<style>
+.btn-anim {
+  position: relative;
+  overflow: hidden;
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-anim::before,
+.btn-anim::after {
+  content: '';
+  position: absolute;
+  border-radius: 9999px;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid transparent;
+}
+
+.btn-anim::before {
+  border-bottom-color: var(--border-hover-color, #00FFC8);
+  border-left-color: var(--border-hover-color, #00FFC8);
+  transition: all 0.4s ease-in-out;
+  clip-path: polygon(0 100%, 0 100%, 0 100%, 0 100%);
+}
+
+.btn-anim::after {
+  border-top-color: var(--border-hover-color, #00FFC8);
+  border-right-color: var(--border-hover-color, #00FFC8);
+  transition: all 0.4s ease-in-out 0.4s;
+  clip-path: polygon(100% 0, 100% 0, 100% 0, 100% 0);
+}
+
+.btn-anim:hover::before {
+  clip-path: polygon(0 100%, 0 0, 100% 0, 100% 100%);
+  transition-delay: 0s;
+}
+
+.btn-anim:hover::after {
+  clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);
+  transition-delay: 0.4s;
+}
+  </style>

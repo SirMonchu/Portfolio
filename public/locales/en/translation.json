@@ -45,5 +45,10 @@
                 "desciption": "Innovative software designed for Fersoft that automates the creation and management of documents for a web page's policies, improving the speed of creating policy pages by 50% and reducing compliance errors by 60%. Allowing the creation of these policies in an agile and automated way."
             }
             
+        },
+
+        "me": {
+            "title": "About me",
+            "desciption": "Nice to meet you, my name is Ramon, but you can also call me Monchu. I am from Spain and my native language is Spanish, but also proficient in English. I have been using computers since I was 10 years old, continuously expanding my knowledge in this field. My experience includes various programming languages and software tools."
         }
 }

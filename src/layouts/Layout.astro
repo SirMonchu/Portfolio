@@ -20,14 +20,18 @@ const { description, title } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <ViewTransitions />
   </head>
   <body class="relative text-black dark:text-white scrollbar">
-    <div class="background"></div>
+    <!-- Contenedor del fondo -->
+    <div class="background-wrapper">
+      <div class="background light"></div>
+      <div class="background dark"></div>
+    </div>
     <slot />
     <Header />
   </body>
@@ -40,7 +44,7 @@ const { description, title } = Astro.props;
 
 :root {
   --size: 25px;
-color-scheme: light dark;
+  color-scheme: light dark;
 }
 
 html {
@@ -54,7 +58,6 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  overflow: hidden;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -73,6 +76,16 @@ body {
   }
 }
 
+.background-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1;
+}
+
 .background {
   position: absolute;
   top: -75%;
@@ -82,7 +95,6 @@ body {
   filter: blur(8px);
   -webkit-filter: blur(8px);
   animation: rotateBackground 60s linear infinite;
-  z-index: -1;
 }
 
 .background.light {

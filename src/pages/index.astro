@@ -10,6 +10,8 @@ import Briefcase from "../icons/Briefcase.astro";
 import LightBulb from "../icons/LightBulb.astro";
 import Layout from "../layouts/Layout.astro";
 import { t, changeLanguage } from "i18next";
+import UserIcon from "../icons/User.astro";
+import BranchIcon from "../icons/Branch.astro";
 
 changeLanguage("en");
 ---
@@ -30,7 +32,7 @@ changeLanguage("en");
 
         <SectionContainer id="projects">
             <h2 class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white">
-                <Briefcase class="size-8" /> {t('nav.projects')}
+                <BranchIcon class="size-8" /> {t('nav.projects')}
             </h2>
             <div class="grid gap-4 sm:grid-cols-2 md:grid-cols-2">
                 <Projects/>
@@ -46,7 +48,7 @@ changeLanguage("en");
 
             <SectionContainer>
                 <h2 class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white">
-                    <LightBulb class="size-8" />About me
+                    <UserIcon class="size-8" />{t('me.title')}
                 </h2>
                 <MoreAboutMe></MoreAboutMe>
             </SectionContainer>

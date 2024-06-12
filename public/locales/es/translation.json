@@ -46,5 +46,10 @@
         "cookieaware": {
             "desciption": "Innovador software diseñado para Fersoft que automatiza la creación y gestión de documentos para las políticas de una página web, mejorando la velocidad de creación de páginas de políticas en un 50% y reduciendo los errores de cumplimiento en un 60%. Permitiendo la creación de estas politicas de forma agil y automatizada."
         }
+    },
+
+    "me": {
+        "title": "Sobre mi",
+        "desciption": "Encantado de conocerte, mi nombre es Ramón, pero también puedes llamarme Monchu. Soy de España y mi lengua materna es el español, pero también domino el inglés. Uso la informática desde los 10 años, ampliando continuamente mis conocimientos en este campo. Mi experiencia incluye varios lenguajes de programación y herramientas de software."
     }
 }

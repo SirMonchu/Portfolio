@@ -44,5 +44,10 @@
         "cookieaware": {
             "desciption": "Für Fersoft entwickelte innovative Software, die die Erstellung und Verwaltung von Dokumenten für die Richtlinien einer Webseite automatisiert, die Geschwindigkeit der Erstellung von Richtlinienseiten um 50 % steigert und Compliance-Fehler um 60 % reduziert. Ermöglicht die agile und automatisierte Erstellung dieser Richtlinien."
         }
+    },
+
+    "me": {
+        "title": "Ueber mich",
+        "desciption": "Schön, Sie kennenzulernen, mein Name ist Ramon, aber Sie können mich auch Monchu nennen. Ich komme aus Spanien und meine Muttersprache ist Spanisch, aber ich beherrsche auch Englisch. Ich benutze Computer seit meinem 10. Lebensjahr und erweitere mein Wissen auf diesem Gebiet kontinuierlich. Meine Erfahrung umfasst verschiedene Programmiersprachen und Softwaretools."
     }
 }
