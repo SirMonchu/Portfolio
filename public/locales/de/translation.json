@@ -48,6 +48,7 @@
 
     "me": {
         "title": "Ueber mich",
-        "desciption": "Schön, Sie kennenzulernen, mein Name ist Ramon, aber Sie können mich auch Monchu nennen. Ich komme aus Spanien und meine Muttersprache ist Spanisch, aber ich beherrsche auch Englisch. Ich benutze Computer seit meinem 10. Lebensjahr und erweitere mein Wissen auf diesem Gebiet kontinuierlich. Meine Erfahrung umfasst verschiedene Programmiersprachen und Softwaretools."
+        "desciption": "Schön, Sie kennenzulernen, mein Name ist Ramon, aber Sie können mich auch Monchu nennen. Ich komme aus Spanien und meine Muttersprache ist Spanisch, aber ich beherrsche auch Englisch. Ich benutze Computer seit meinem 10. Lebensjahr und erweitere mein Wissen auf diesem Gebiet kontinuierlich. Meine Erfahrung umfasst verschiedene Programmiersprachen und Softwaretools.",
+        "email": "Sie können mich über diese E-Mail kontaktieren:"
     }
 }

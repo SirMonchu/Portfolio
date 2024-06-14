@@ -50,6 +50,7 @@
 
     "me": {
         "title": "Sobre mi",
-        "desciption": "Encantado de conocerte, mi nombre es Ramón, pero también puedes llamarme Monchu. Soy de España y mi lengua materna es el español, pero también domino el inglés. Uso la informática desde los 10 años, ampliando continuamente mis conocimientos en este campo. Mi experiencia incluye varios lenguajes de programación y herramientas de software."
+        "desciption": "Encantado de conocerte, mi nombre es Ramón, pero también puedes llamarme Monchu. Soy de España y mi lengua materna es el español, pero también domino el inglés. Uso la informática desde los 10 años, ampliando continuamente mis conocimientos en este campo. Mi experiencia incluye varios lenguajes de programación y herramientas de software.",
+        "email": "Puedes contactar conmigo mediante este correo:"
     }
 }

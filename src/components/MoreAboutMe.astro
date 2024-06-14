@@ -8,13 +8,45 @@ const aboutMe = {
 };
 ---
 
-
-  <div class="container mx-auto px-4">
-    <div class="flex flex-col md:flex-row items-center md:space-x-8">
-      <img src={aboutMe.photo} alt="Foto de perfil" class="w-40 h-40 rounded-full object-cover shadow-lg mb-8 md:mb-0" />
-      <div class="flex-1 bg-gray-100 bg-opacity-10 p-6 rounded-lg shadow-lg">
-        <h2 class="text-3xl font-bold mb-4">{aboutMe.title}</h2>
-        <p class="text-lg leading-relaxed">{aboutMe.description}</p>
-      </div>
+<div class="container mx-auto px-4">
+  <div class="flex flex-col md:flex-row items-center md:space-x-8">
+    <img src={aboutMe.photo} alt="Foto de perfil" class="w-40 h-40 rounded-full object-cover shadow-lg mb-8 md:mb-0" />
+    <div class="flex-1 bg-gray-100 bg-opacity-10 p-6 rounded-lg shadow-lg">
+      <h2 class="text-3xl font-bold mb-4">{aboutMe.title}</h2>
+      <p class="text-lg leading-relaxed">{aboutMe.description}</p>
     </div>
   </div>
+  <div class="flex-1 bg-gray-100 bg-opacity-10 p-6 rounded-lg shadow-lg mt-2 relative">
+    <span class="text-2xl">{t('me.email')} </span>
+    <div class="items-center inline-flex">
+      <input type="text" id="emailInput" class="text-2xl bg-transparent rounded-l-full border-white border-2 border-opacity-30 px-5" readonly value="ramonromeca@gmail.com">
+      <button id="copyButton" class="bg-transparent hover:bg-white hover:bg-opacity-10 border-white border-2 border-opacity-30 text-white font-bold py-1 px-3 rounded-r-full">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-2m-4-4h8m-8-4h8m-8-4h8"/></svg>
+      </button>
+    </div>
+  </div>
+  
+  <!-- Toast Notification -->
+  <div id="toast" class="hidden fixed bottom-4 right-4 bg-black text-white px-4 py-2 rounded-lg transition-opacity duration-300">
+    Correo copiado al portapapeles
+  </div>
+</div>
+
+<script>
+  const copyButton = document.getElementById('copyButton') as HTMLButtonElement;
+  const emailInput = document.getElementById('emailInput') as HTMLInputElement;
+  const toast = document.getElementById('toast') as HTMLElement;
+
+  if (copyButton && emailInput && toast) {
+    copyButton.addEventListener('click', function() {
+      navigator.clipboard.writeText(emailInput.value).then(function() {
+        toast.classList.remove('hidden');
+        setTimeout(function() {
+          toast.classList.add('hidden');
+        }, 3000);
+      }, function(err) {
+        console.error('Error al copiar: ', err);
+      });
+    });
+  }
+</script>

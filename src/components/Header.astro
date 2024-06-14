@@ -27,23 +27,27 @@ const navItems = [
 ];
 ---
 
-<header class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2 space-x-10">
-  <img class="w-14 h-14 rounded-full hover:w-32 hover:h-32 hover:animate-pulse" src="https://avatars.githubusercontent.com/u/49107346?v=4" alt="Myself">
+<header class="fixed top-0 z-10 flex items-center justify-center lg:justify-center w-full mx-auto mt-2 space-x-0 lg:space-x-10">
+  <img class="w-14 h-14 rounded-full hover:w-32 hover:h-32 hover:animate-pulse max-md:hidden" src="https://avatars.githubusercontent.com/u/49107346?v=4" alt="Myself">
 
-  <nav class="flex px-3 text-sm font-medium rounded-full text-gray-600 dark:text-gray-200 justify-center items-center space-x-10">
-    {
-      navItems.map((link) => (
-        <a
-          class="relative block px-2 py-2 transition hover:text-[#00FFC8] dark:hover:text-[#00FFC8]"
-          aria-label={link.label}
-          href={link.url}
-        >
-          {link.title}
-        </a>
-      ))
-    }
-    <ThemeToggle />
-    <LenguageSelect />
+  <nav class="flex flex-col lg:flex-row px-0 lg:px-3 text-sm max-md:text-lg font-medium rounded-full text-gray-600 dark:text-gray-200 justify-center items-center lg:space-x-10 space-y-2 lg:space-y-0">
+    <div class="flex flex-row space-x-2 lg:space-x-10">
+      {
+        navItems.map((link) => (
+          <a
+            class="relative block px-2 py-2 transition hover:text-[#00FFC8] dark:hover:text-[#00FFC8]"
+            aria-label={link.label}
+            href={link.url}
+          >
+            {link.title}
+          </a>
+        ))
+      }
+    </div>
+    <div class="flex flex-row lg:flex-row lg:space-x-2 space-y-2 lg:space-y-0 items-center">
+      <ThemeToggle />
+      <LenguageSelect />
+    </div>
   </nav>
 </header>
 

@@ -49,6 +49,7 @@
 
         "me": {
             "title": "About me",
-            "desciption": "Nice to meet you, my name is Ramon, but you can also call me Monchu. I am from Spain and my native language is Spanish, but also proficient in English. I have been using computers since I was 10 years old, continuously expanding my knowledge in this field. My experience includes various programming languages and software tools."
+            "desciption": "Nice to meet you, my name is Ramon, but you can also call me Monchu. I am from Spain and my native language is Spanish, but also proficient in English. I have been using computers since I was 10 years old, continuously expanding my knowledge in this field. My experience includes various programming languages and software tools.",
+            "email": "You can contact me through this email:"
         }
 }
